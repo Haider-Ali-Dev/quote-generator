@@ -54,7 +54,7 @@ class App extends React.Component {
           <h1 className="f1 ttu tracked mt0 underline" style={{textAlign : 'center'}}>Quote Generator</h1>
           <Card quote={quote} author={author} newQuote={this.getNext}/>
             <footer className="pv4 ph3 ph5-m ph6-l mid-gray underline">
-              <small className="f6 db tc">© 2021 <b class="ttu">Haider Ali</b>., All Rights Reserved</small>
+              <small className="f6 db tc">© 2021 <b className="ttu">Haider Ali</b>., All Rights Reserved</small>
             </footer>
         </div>
         
