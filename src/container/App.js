@@ -2,6 +2,7 @@
 import './App.css';
 import Card from '../components/Card';
 import React from 'react';
+import MakeQuote from '../components/MakeQuote';
 
 
 function getRandomInt(min, max) {
@@ -17,9 +18,13 @@ class App extends React.Component {
     super(props)
     this.state = {
       quote : [],
-      author: []
+      author: [],
+      yourQuote : 'None',
     };
     this.getNext = this.getNext.bind(this)
+    this.getFormValue = this.getFormValue.bind(this);
+    this.onFormPress = this.onFormPress.bind(this);
+    this.resetButton = this.resetButton.bind(this);
 
   }
 
@@ -35,6 +40,20 @@ class App extends React.Component {
     .then(res => res.json())
     .then(data => this.setState({quote : data[buttonIndex].text, author : data[buttonIndex].author}))
     console.log(1)
+  }
+
+  getFormValue(event) {
+    this.setState({yourQuote : event.target.value})
+  }
+
+  onFormPress(event) {
+    const { yourQuote } = this.state;
+    this.setState({yourQuote : `"${yourQuote}"`})
+    event.preventDefault()
+  }
+
+  resetButton = () => {
+    this.setState({yourQuote : 'None'})
   }
 
 
@@ -53,6 +72,7 @@ class App extends React.Component {
         <div>
           <h1 className="f1 ttu tracked mt0 underline" style={{textAlign : 'center'}}>Quote Generator</h1>
           <Card quote={quote} author={author} newQuote={this.getNext}/>
+          <MakeQuote formFucn={this.getFormValue} button={this.onFormPress} data={this.state.yourQuote} reset={this.resetButton}/>
             <footer className="pv4 ph3 ph5-m ph6-l mid-gray underline">
               <small className="f6 db tc">© 2021 <b className="ttu">Haider Ali</b>., All Rights Reserved</small>
             </footer>
