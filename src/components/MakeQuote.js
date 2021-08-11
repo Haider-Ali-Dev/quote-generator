@@ -6,7 +6,7 @@ const MakeQuote = (props) => {
             <h1 className="tc underline">Quote Maker</h1>
             <form>
                 <label>
-                    <textarea name="text" style={{resize: 'vertical'}} rows="2" cols="25" onChange={props.formFucn} type="text" placeholder="Type Your Quote"/> 
+                    <textarea className="ma3" name="text" style={{resize: 'vertical'}}  onChange={props.formFucn} type="text" placeholder="Type Your Quote"/> 
                 </label>
                 
             </form>
