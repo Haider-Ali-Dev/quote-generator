@@ -2,7 +2,7 @@ import React from 'react';
 
 const MakeQuote = (props) => {
     return(
-        <div className="mw5 mw7-ns center bg-light-purple pa3 ph5-ns br3 pa3 ma4 grow bw2 shadow-5">
+        <div className="mw5 mw7-ns center bg-light-purple pa4 ph5-ns br3 pa3 ma4 grow bw2 shadow-5">
             <h1 className="tc underline">Quote Maker</h1>
             <form>
                 <label>
