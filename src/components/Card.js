@@ -10,7 +10,7 @@ class Card extends Component {
                 <h1   className="underline">{this.props.author}</h1>
                 <div>
                     <p className="i fw8">{this.props.quote}</p>
-                    <button onClick={this.props.newQuote} className="f6 link dim ph3 pv2 mb2 dib white bg-black br4">Next Quote</button>
+                    <button onClick={this.props.newQuote} className="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded m-3">Next Quote</button>
                 </div>
             </div>
         );
